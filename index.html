@@ -3,207 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SLA Outage Cost Calculator | UniverisalCalculator</title>
-    <!-- Fix for GitHub Pages 404/path issues -->
-    <base href="/universal-calculator-site/"> 
+    <title>SLA Outage Cost Analyzer | UnverisalCalculator</title>
+    <!-- Force HTTPS to fix padlock/security issues -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
     <!-- Load Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom font import and basic body styling */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f7f9fb;
-        }
-        /* Custom utility for the responsive container */
-        .content-container {
-            max-width: 896px; /* A bit wider than the calculator for the text */
-        }
-        /* Specific styling for ad slots */
-        .ad-container {
-            min-height: 100px; 
-            width: 100%; 
-        }
-        /* FIX: Ensure the ins tag acts as a proper block element for sizing */
-        .adsbygoogle {
-            display: block !important;
-        }
-    </style>
-    
-    <!-- **************************************** -->
-    <!-- 1. GOOGLE ADSENSE VERIFICATION CODE -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3843044871711723" crossorigin="anonymous"></script>
-    <!-- **************************************** -->
 
-    <!-- 2. GOOGLE TAG MANAGER (GTM) - HEADER SNIPPET -->
+    <!-- Google Tag Manager (GTM) - HEADER SNIPPET (This loads GA4 and is the AdSense container) -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    'https://www.googletagmanager.com/gtag/js?id=G-YHNZY1K0SK'+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5WSPGJ6W');</script>
-    <!-- END Google Tag Manager -->
+    <!-- End Google Tag Manager -->
     
-</head>
-<body class="min-h-screen flex flex-col items-center p-4">
+    <!-- AdSense Verification/Loader Script (MUST be here for verification) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3843044871711723"
+        crossorigin="anonymous"></script>
 
-    <!-- 2b. GOOGLE TAG MANAGER (GTM) - BODY SNIPPET (noscript) -->
+    <style>
+        /* Custom styles for background and font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fa;
+        }
+        .calculator-card {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e7ff;
+        }
+        /* Custom style for responsive ad containers to fix size=0 error */
+        .ad-container .adsbygoogle {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center p-4 sm:p-8">
+    <!-- Google Tag Manager (noscript) - BODY SNIPPET -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WSPGJ6W"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- END Google Tag Manager (noscript) -->
-    
-    <!-- Header and Navigation -->
-    <header class="w-full content-container text-center py-6">
-        <h1 class="text-4xl font-extrabold text-gray-900 mb-2">UnverisalCalculator</h1>
-        <p class="text-xl text-indigo-600 font-semibold">Service Outage Cost Analyzer</p>
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="text-center mb-10 w-full max-w-2xl mx-auto">
+        <h1 class="text-5xl font-extrabold text-gray-800 tracking-tight">UnverisalCalculator</h1>
+        <p class="text-lg text-indigo-600 font-semibold mt-1">Service Outage Cost Analyzer</p>
     </header>
 
-    <!-- Ad Banner Top Placement -->
-    <!-- Removed text-center class to prevent sizing conflicts -->
-    <div class="w-full content-container bg-white shadow-lg rounded-lg mb-6 p-4 border border-indigo-200 ad-container">
-        <!-- AD SLOT 1: TOP BANNER AD CODE -->
+    <!-- AD SLOT 1: TOP BANNER -->
+    <div class="ad-container w-full max-w-2xl mx-auto mb-8">
         <ins class="adsbygoogle"
-             style="display:block; min-width:250px; min-height:90px; margin: 0 auto; height: 100px;" 
-             data-ad-client="ca-pub-3843044871711723"
-             data-ad-slot="1833774691" 
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
+            style="display:block; min-width: 250px; height: 100px; margin: 0 auto;"
+            data-ad-client="ca-pub-3843044871711723"
+            data-ad-slot="1833774691"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
         <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
+            (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </div>
 
-    <!-- Main Calculator Card -->
-    <main class="w-full max-w-2xl bg-white p-8 shadow-xl rounded-xl border-t-4 border-indigo-500">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">SLA & Downtime Loss Calculator</h2>
-        
-        <!-- Input Fields -->
-        <div class="space-y-6">
-            <!-- Downtime -->
-            <div>
-                <label for="downtimeHours" class="block text-sm font-medium text-gray-700">1. Total Downtime (Hours)</label>
-                <input type="number" id="downtimeHours" value="1" min="0.01" step="0.01" placeholder="e.g., 2.5 hours" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border">
+    <!-- MAIN CALCULATOR CARD -->
+    <main class="w-full max-w-2xl mx-auto">
+        <div id="calculator-card" class="calculator-card p-6 sm:p-8 rounded-xl">
+            <h2 class="text-3xl font-bold text-indigo-800 mb-6 border-b pb-2">SLA & Downtime Loss Calculator</h2>
+
+            <div class="space-y-4">
+                <!-- Input 1: Total Downtime -->
+                <div>
+                    <label for="downtime" class="block text-sm font-medium text-gray-700 mb-1">1. Total Downtime (Hours)</label>
+                    <input type="number" id="downtime" value="1" min="0" step="0.5"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150">
+                </div>
+
+                <!-- Input 2: Affected Users -->
+                <div>
+                    <label for="affectedUsers" class="block text-sm font-medium text-gray-700 mb-1">2. Affected Users (Count)</label>
+                    <input type="number" id="affectedUsers" value="1000" min="1" step="10"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150">
+                </div>
+
+                <!-- Input 3: Revenue Loss -->
+                <div>
+                    <label for="revenueLoss" class="block text-sm font-medium text-gray-700 mb-1">3. Average Revenue Loss per User per Hour ($)</label>
+                    <input type="number" id="revenueLoss" value="0.50" min="0" step="0.01"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150">
+                </div>
             </div>
 
-            <!-- Affected Users -->
-            <div>
-                <label for="affectedUsers" class="block text-sm font-medium text-gray-700">2. Affected Users (Count)</label>
-                <input type="number" id="affectedUsers" value="1000" min="1" step="1" placeholder="e.g., 5000" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border">
-            </div>
+            <!-- Calculation Button -->
+            <button id="calculateBtn"
+                class="w-full mt-8 py-3 px-4 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-200 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 transform hover:scale-[1.01]">
+                Calculate Estimated Loss
+            </button>
 
-            <!-- Revenue Loss per Hour per User -->
-            <div>
-                <label for="hourlyRevenueLoss" class="block text-sm font-medium text-gray-700">3. Average Revenue Loss per User per Hour ($)</label>
-                <input type="number" id="hourlyRevenueLoss" value="0.50" min="0.01" step="0.01" placeholder="e.g., 0.50" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border">
+            <!-- Result Display -->
+            <div id="result" class="mt-6 p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-500 text-gray-800 hidden">
+                <p class="font-semibold text-lg">Estimated Financial Loss:</p>
+                <p id="lossValue" class="text-3xl font-extrabold text-indigo-700 mt-1">$0.00</p>
             </div>
         </div>
 
-        <!-- Calculation Button -->
-        <button id="calculateButton" class="w-full mt-8 py-3 px-4 border border-transparent rounded-lg shadow-lg text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out transform hover:scale-[1.01]">
-            Calculate Total Outage Cost
-        </button>
-
-        <!-- Output Result -->
-        <div id="resultBox" class="mt-8 p-6 bg-indigo-50 rounded-lg border-2 border-indigo-300 hidden">
-            <p class="text-sm font-medium text-gray-600">Estimated Financial Loss from Outage:</p>
-            <p id="totalLoss" class="text-4xl font-extrabold text-indigo-700 mt-1">$0.00</p>
+        <!-- AD SLOT 2: MIDDLE SQUARE -->
+        <div class="ad-container w-full max-w-2xl mx-auto my-8">
+            <ins class="adsbygoogle"
+                style="display:block; min-width: 250px; min-height: 250px; margin: 0 auto;"
+                data-ad-client="ca-pub-3843044871711723"
+                data-ad-slot="2407478002"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
     </main>
 
-    <!-- Ad Banner Middle Placement (Often effective below the calculator) -->
-    <!-- Removed text-center class to prevent sizing conflicts -->
-    <div class="w-full content-container bg-white shadow-lg rounded-lg mt-6 p-4 border border-indigo-200 ad-container">
-        <!-- AD SLOT 2: MIDDLE SQUARE AD CODE GOES HERE -->
-        <ins class="adsbygoogle"
-             style="display:block; min-width:250px; min-height:250px; margin: 0 auto; height: 250px;"
-             data-ad-client="ca-pub-3843044871711723"
-             data-ad-slot="2407478002" 
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-
-    <!-- SEO Content & FAQ Section (Crucial for AdSense Approval and Traffic) -->
-    <section class="w-full content-container bg-white p-8 shadow-xl rounded-xl mt-6">
-        <h3 class="text-2xl font-bold text-gray-800 mb-4">Understanding the True Cost of Downtime</h3>
-        
+    <!-- SEO Content / Trust Builder -->
+    <section class="w-full max-w-2xl mx-auto mt-12 p-6 bg-white rounded-xl shadow-md border border-gray-100">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Understanding Service Outage Costs</h2>
         <p class="text-gray-600 mb-4">
-            The **Service Level Agreement (SLA) Outage Cost Calculator** provided by UniverisalCalculator helps businesses quickly estimate the financial impact of service downtime. While this tool focuses on measurable revenue loss, the true cost of an outage often includes harder-to-quantify factors like brand damage, lost customer trust, and future business churn.
+            The **UnverisalCalculator SLA Tool** provides precision-focused estimates based on your defined metrics. We understand that downtime costs are complex, involving direct revenue loss, compliance penalties, and lost user confidence. Our goal is to provide **modern, reliable utilities** for today's professional needs.
         </p>
-
-        <h4 class="text-xl font-semibold text-gray-800 mt-6 mb-3">How the SLA Loss Formula Works</h4>
         <p class="text-gray-600 mb-4">
-            Our calculator uses a simplified, yet highly effective, formula based on direct financial loss per hour per user:
+            Built using modern web standards and focused on **speed and utility**, this tool is designed to work perfectly on both desktop and mobile devices. We prioritize a clean, secure, and fast user experience.
         </p>
-        <div class="p-4 bg-gray-100 rounded-lg text-center text-lg font-mono text-indigo-700 overflow-x-auto mb-4">
-            $$\text{Loss} = (\text{Downtime Hours} \times \text{Revenue Loss per User per Hour}) \times \text{Affected Users}$$
-        </div>
-        <p class="text-gray-600 mb-4">
-            This model is useful for quick, high-level reporting and understanding the penalty exposure of service providers. When calculating your inputs, always use conservative estimates for your average revenue metrics.
+        <p class="text-gray-600 text-sm italic">
+            Disclaimer: This tool provides financial estimates based on user input and should not be used for final legal or financial reporting.
         </p>
-
-        <h4 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Frequently Asked Questions (FAQ)</h4>
-        <ul class="space-y-3 text-gray-600">
-            <li>
-                <strong class="text-gray-900">Q: What is "Revenue Loss per User per Hour?"</strong><br>
-                A: This figure represents the average amount of money a single active user typically generates for your business in one hour. For e-commerce, this might be calculated by dividing total monthly revenue by the total number of user hours per month.
-            </li>
-            <li>
-                <strong class="gray-900">Q: Why is this calculation simplified?</strong><br>
-                A: This calculator is designed for speed (the "instant" utility). It focuses purely on direct financial impact. A full cost analysis would also include recovery costs, engineering labor during the outage, and potential regulatory fines.
-            </li>
-            <li>
-                <strong class="text-gray-900">Q: What is a Service Level Agreement (SLA)?</strong><br>
-                A: An SLA is a contract between a service provider and a customer that defines the level of service expected. Downtime exceeding the agreed-upon limits often results in financial penalties or credits, which this calculator helps estimate.
-            </li>
-        </ul>
     </section>
     
-    <!-- Footer/Placeholder -->
-    <footer class="w-full content-container text-center text-gray-500 text-sm py-8 mt-6">
-        &copy; 2025 UniverisalCalculator.com | Your go-to source for instant utility tools.
+    <!-- Footer -->
+    <footer class="w-full max-w-2xl mx-auto mt-8 text-center text-sm text-gray-500 py-4 border-t border-gray-200">
+        &copy; 2025 UniverisalCalculator. All rights reserved. | <a href="https://unverisalcalculator.com" class="text-indigo-500 hover:text-indigo-600">Secure & Private Utility Tools</a>
     </footer>
 
-    <!-- JavaScript Logic (UNTOUCHED) -->
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const downtimeInput = document.getElementById('downtimeHours');
-            const affectedInput = document.getElementById('affectedUsers');
-            const revenueInput = document.getElementById('hourlyRevenueLoss');
-            const calculateButton = document.getElementById('calculateButton');
-            const totalLossDisplay = document.getElementById('totalLoss');
-            const resultBox = document.getElementById('resultBox');
+        document.getElementById('calculateBtn').addEventListener('click', function() {
+            const downtime = parseFloat(document.getElementById('downtime').value) || 0;
+            const affectedUsers = parseFloat(document.getElementById('affectedUsers').value) || 0;
+            const revenueLoss = parseFloat(document.getElementById('revenueLoss').value) || 0;
 
-            const calculateLoss = () => {
-                const downtime = parseFloat(downtimeInput.value) || 0;
-                const affected = parseInt(affectedInput.value) || 0;
-                const revenueLoss = parseFloat(revenueInput.value) || 0;
+            if (downtime < 0 || affectedUsers < 0 || revenueLoss < 0) {
+                document.getElementById('lossValue').textContent = "Input must be positive.";
+                document.getElementById('result').classList.remove('hidden');
+                return;
+            }
 
-                // Calculation: (Downtime * RevenueLossPerUserPerHour) * AffectedUsers
-                const totalLoss = (downtime * revenueLoss) * affected;
+            // Calculation: Total Loss = Hours * Users * Revenue per User/Hour
+            const totalLoss = downtime * affectedUsers * revenueLoss;
 
-                // Format as currency
-                const formattedLoss = totalLoss.toLocaleString('en-US', {
-                    style: 'currency',
-                    currency: 'USD',
-                    minimumFractionDigits: 2
-                });
-
-                totalLossDisplay.textContent = formattedLoss;
-                resultBox.classList.remove('hidden');
-            };
-            
-            // Initial calculation on load for sample data visibility
-            calculateLoss(); 
-
-            // Attach event listener to button
-            calculateButton.addEventListener('click', calculateLoss);
-
-            // Also calculate when input values change
-            [downtimeInput, affectedInput, revenueInput].forEach(input => {
-                input.addEventListener('input', calculateLoss);
+            // Display Result
+            document.getElementById('lossValue').textContent = totalLoss.toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2
             });
+            document.getElementById('result').classList.remove('hidden');
         });
     </script>
 </body>
