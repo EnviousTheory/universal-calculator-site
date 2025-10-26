@@ -1,9 +1,11 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SLA Outage Cost Calculator | Universal Calculator</title>
+    <title>SLA Outage Cost Calculator | UniversalCalculator</title>
+    <!-- Fix for GitHub Pages 404/path issues -->
+    <base href="/universal-calculator-site/"> 
     <!-- Load Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -18,14 +20,30 @@
             max-width: 896px; /* A bit wider than the calculator for the text */
         }
     </style>
-    <!-- 
-        *** AD SENSE VERIFICATION CODE GOES HERE ***
-        PASTE the entire AdSense script provided by Google here. This is for site verification.
-    -->
+    
+    <!-- **************************************** -->
+    <!-- 1. GOOGLE ADSENSE VERIFICATION CODE (REQUIRED FOR APPROVAL) -->
+    <!-- This code is critical for Google to approve your site and start serving ads. -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3843044871711723" crossorigin="anonymous"></script>
+    <!-- **************************************** -->
+
+    <!-- 2. GOOGLE TAG MANAGER (GTM) - HEADER SNIPPET -->
+    <!-- This is the professional way to manage all analytics and scripts (GA4, future ads, etc.) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WSPGJ6W');</script>
+    <!-- END Google Tag Manager -->
     
 </head>
 <body class="min-h-screen flex flex-col items-center p-4">
 
+    <!-- 2b. GOOGLE TAG MANAGER (GTM) - BODY SNIPPET (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WSPGJ6W"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- END Google Tag Manager (noscript) -->
+    
     <!-- Header and Navigation -->
     <header class="w-full content-container text-center py-6">
         <h1 class="text-4xl font-extrabold text-gray-900 mb-2">UniversalCalculator</h1>
@@ -34,10 +52,8 @@
 
     <!-- Ad Banner Top Placement -->
     <div class="w-full content-container bg-white shadow-lg rounded-lg mb-6 p-4 border border-indigo-200 text-center text-sm text-gray-500">
-        <!-- Google Ad Unit Placeholder 1: Responsive Banner -->
-        <p>AD SPACE: TOP BANNER (E.g., 728x90)</p>
-        <!-- Actual AdSense Ad Unit Code (ad slot) goes here once approved -->
-        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXX" data-ad-slot="1111111111"></ins> -->
+        <!-- AD SLOT 1: TOP BANNER AD CODE GOES HERE -->
+        <p>AD SPACE: TOP BANNER (Google will insert ad here)</p>
     </div>
 
     <!-- Main Calculator Card -->
@@ -79,10 +95,8 @@
 
     <!-- Ad Banner Middle Placement (Often effective below the calculator) -->
     <div class="w-full content-container bg-white shadow-lg rounded-lg mt-6 p-4 border border-indigo-200 text-center text-sm text-gray-500">
-        <!-- Google Ad Unit Placeholder 2: Responsive Ad (often square) -->
-        <p>AD SPACE: MIDDLE AD (E.g., 300x250) </p>
-        <!-- Actual AdSense Ad Unit Code (ad slot) goes here once approved -->
-        <!-- <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-XXXXXXXXXXXXX" data-ad-slot="2222222222"></ins> -->
+        <!-- AD SLOT 2: SQUARE/MIDDLE AD CODE GOES HERE -->
+        <p>AD SPACE: MIDDLE AD (Google will insert ad here)</p>
     </div>
 
     <!-- SEO Content & FAQ Section (Crucial for AdSense Approval and Traffic) -->
@@ -111,7 +125,7 @@
                 A: This figure represents the average amount of money a single active user typically generates for your business in one hour. For e-commerce, this might be calculated by dividing total monthly revenue by the total number of user hours per month.
             </li>
             <li>
-                <strong class="text-gray-900">Q: Why is this calculation simplified?</strong><br>
+                <strong class="gray-900">Q: Why is this calculation simplified?</strong><br>
                 A: This calculator is designed for speed (the "instant" utility). It focuses purely on direct financial impact. A full cost analysis would also include recovery costs, engineering labor during the outage, and potential regulatory fines.
             </li>
             <li>
@@ -167,5 +181,3 @@
             });
         });
     </script>
-</body>
-</html>
