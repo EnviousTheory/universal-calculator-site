@@ -19,16 +19,23 @@
         .content-container {
             max-width: 896px; /* A bit wider than the calculator for the text */
         }
+        /* Specific styling for ad slots */
+        .ad-container {
+            min-height: 100px; 
+            width: 100%; 
+        }
+        /* FIX: Ensure the ins tag acts as a proper block element for sizing */
+        .adsbygoogle {
+            display: block !important;
+        }
     </style>
     
     <!-- **************************************** -->
-    <!-- 1. GOOGLE ADSENSE VERIFICATION CODE (REQUIRED FOR APPROVAL) -->
-    <!-- This code is critical for Google to approve your site and start serving ads. -->
+    <!-- 1. GOOGLE ADSENSE VERIFICATION CODE -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3843044871711723" crossorigin="anonymous"></script>
     <!-- **************************************** -->
 
     <!-- 2. GOOGLE TAG MANAGER (GTM) - HEADER SNIPPET -->
-    <!-- This is the professional way to manage all analytics and scripts (GA4, future ads, etc.) -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -51,9 +58,18 @@
     </header>
 
     <!-- Ad Banner Top Placement -->
-    <div class="w-full content-container bg-white shadow-lg rounded-lg mb-6 p-4 border border-indigo-200 text-center text-sm text-gray-500">
-        <!-- AD SLOT 1: TOP BANNER AD CODE GOES HERE -->
-        <p>AD SPACE: TOP BANNER (Google will insert ad here)</p>
+    <!-- Removed text-center class to prevent sizing conflicts -->
+    <div class="w-full content-container bg-white shadow-lg rounded-lg mb-6 p-4 border border-indigo-200 ad-container">
+        <!-- AD SLOT 1: TOP BANNER AD CODE -->
+        <ins class="adsbygoogle"
+             style="display:block; min-width:250px; min-height:90px; margin: 0 auto; height: 100px;" 
+             data-ad-client="ca-pub-3843044871711723"
+             data-ad-slot="1833774691" 
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
     <!-- Main Calculator Card -->
@@ -94,9 +110,18 @@
     </main>
 
     <!-- Ad Banner Middle Placement (Often effective below the calculator) -->
-    <div class="w-full content-container bg-white shadow-lg rounded-lg mt-6 p-4 border border-indigo-200 text-center text-sm text-gray-500">
-        <!-- AD SLOT 2: SQUARE/MIDDLE AD CODE GOES HERE -->
-        <p>AD SPACE: MIDDLE AD (Google will insert ad here)</p>
+    <!-- Removed text-center class to prevent sizing conflicts -->
+    <div class="w-full content-container bg-white shadow-lg rounded-lg mt-6 p-4 border border-indigo-200 ad-container">
+        <!-- AD SLOT 2: MIDDLE SQUARE AD CODE GOES HERE -->
+        <ins class="adsbygoogle"
+             style="display:block; min-width:250px; min-height:250px; margin: 0 auto; height: 250px;"
+             data-ad-client="ca-pub-3843044871711723"
+             data-ad-slot="2407478002" 
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
     <!-- SEO Content & FAQ Section (Crucial for AdSense Approval and Traffic) -->
@@ -181,3 +206,5 @@
             });
         });
     </script>
+</body>
+</html>
