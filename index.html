@@ -97,4 +97,137 @@
     <!-- AD SLOT 1: TOP BANNER -->
     <div class="ad-container w-full max-w-2xl mx-auto mb-8 bg-gray-50 p-2 rounded-lg shadow-inner">
         <ins class="adsbygoogle"
-            style="display:block; min-width: 250px; height: 100px;
+            style="display:block; min-width: 250px; height: 100px; margin: 0 auto;"
+            data-ad-client="ca-pub-3843044871711723"
+            data-ad-slot="1833774691"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- MAIN CALCULATOR CARD -->
+    <main class="w-full max-w-2xl mx-auto">
+        <div id="calculator-card" class="calculator-card p-6 sm:p-8 rounded-xl">
+            <h2 class="text-3xl font-bold text-indigo-800 mb-6 border-b pb-2">SLA & Downtime Loss Calculator</h2>
+
+            <div class="space-y-4">
+                <!-- Input 1: Total Downtime -->
+                <div>
+                    <label for="downtimeHours" class="block text-sm font-medium text-gray-700 mb-1">1. Total Downtime (Hours)</label>
+                    <input type="number" id="downtimeHours" value="1" min="0.1" step="0.1"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 transition duration-150">
+                </div>
+
+                <!-- Input 2: Affected Users -->
+                <div>
+                    <label for="affectedUsers" class="block text-sm font-medium text-gray-700 mb-1">2. Affected Users (Count)</label>
+                    <input type="number" id="affectedUsers" value="1000" min="1" step="100"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 transition duration-150">
+                </div>
+
+                <!-- Input 3: Revenue Loss -->
+                <div>
+                    <label for="revenueLoss" class="block text-sm font-medium text-gray-700 mb-1">3. Average Revenue Loss per User per Hour ($)</label>
+                    <input type="number" id="revenueLoss" value="0.50" min="0.01" step="0.1"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 transition duration-150">
+                    <p class="text-xs text-gray-500 mt-1">This figure includes lost sales, reduced productivity, and reputation damage.</p>
+                </div>
+            </div>
+
+            <!-- Calculation Button -->
+            <button id="calculateBtn"
+                class="w-full mt-8 py-3 px-4 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-200 focus:ring-4 focus:ring-indigo-500 transform hover:scale-[1.01]">
+                Calculate Estimated Loss
+            </button>
+        </div>
+
+        <!-- RESULTS SECTION -->
+        <div id="resultsSection" class="mt-8 hidden">
+            <div id="summaryBox" class="p-6 rounded-xl shadow-lg border border-red-200 bg-red-50">
+                <h3 class="text-xl font-bold text-red-700 mb-2">Estimated Financial Loss</h3>
+                <p class="text-sm text-gray-600 mb-4">This figure represents the direct cost incurred by the outage.</p>
+                <p id="totalLoss" class="text-4xl font-extrabold text-red-600">$0.00</p>
+            </div>
+        </div>
+
+        <!-- CONTENT AUTHORITY SECTION -->
+        <div class="w-full mt-12 p-6 bg-white rounded-xl shadow-lg border border-gray-200">
+            <h2 class="text-2xl font-bold text-indigo-800 mb-4 border-b pb-2">Why Calculate SLA Outage Costs?</h2>
+            <p class="text-gray-700 mb-4">
+                Understanding the **financial impact of downtime** is essential for IT budgeting, service level agreement (SLA) negotiation, and securing funds for mission-critical infrastructure. A vague promise of "high uptime" doesn't protect your business; a specific dollar figure does. Our SLA calculator provides the quick estimate needed to prove the ROI of stability.
+            </p>
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Understanding the Revenue Loss Factor</h3>
+            <p class="text-gray-700 mb-4">
+                The **Average Revenue Loss per User per Hour** is the most debated factor. It accounts for more than just lost sales; it includes lost productivity, employee time spent resolving the issue, potential SLA penalties owed to clients, and long-term brand reputation damage. Using a realistic figure here is the key to accurate forecasting.
+            </p>
+            
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Frequently Asked Questions (FAQ)</h3>
+            <div class="space-y-4">
+                <div class="border-b pb-2">
+                    <p class="font-medium text-gray-900">Q: What is a standard acceptable SLA uptime?</p>
+                    <p class="text-sm text-gray-700">A: Most standard SaaS platforms promise "three nines" (99.9%), which still allows for approximately 8 hours of total downtime per year. Mission-critical systems often target 99.99% ("four nines").</p>
+                </div>
+                <div class="border-b pb-2">
+                    <p class="font-medium text-gray-900">Q: Does this account for hardware replacement costs?</p>
+                    <p class="text-sm text-gray-700">A: No, this calculator focuses on **financial loss** from lack of operation. For total cost, you must add specific hardware, consulting, and repair costs.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- AD SLOT 2: MIDDLE SQUARE -->
+    <div class="ad-container w-full max-w-2xl mx-auto my-8 bg-gray-50 p-2 rounded-lg shadow-inner">
+        <ins class="adsbygoogle"
+            style="display:block; min-width: 250px; min-height: 250px; margin: 0 auto;"
+            data-ad-client="ca-pub-3843044871711723"
+            data-ad-slot="2407478002"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-2xl mx-auto mt-8 text-center text-sm text-gray-500 py-4 border-t border-gray-200">
+        &copy; 2025 UnverisalCalculator. All rights reserved. | Built for Utility and Precision.
+    </footer>
+
+
+    <script>
+        // JavaScript for SLA Calculator Logic
+        function calculateSLA() {
+            const downtimeHours = parseFloat(document.getElementById('downtimeHours').value);
+            const affectedUsers = parseFloat(document.getElementById('affectedUsers').value);
+            const revenueLoss = parseFloat(document.getElementById('revenueLoss').value);
+
+            if (isNaN(downtimeHours) || isNaN(affectedUsers) || isNaN(revenueLoss) || downtimeHours < 0 || affectedUsers < 0 || revenueLoss < 0) {
+                document.getElementById('resultsSection').classList.add('hidden');
+                // Using console.error instead of alert for better UX and debugging
+                console.error("Input Error: Use positive numbers only.");
+                return;
+            }
+
+            // Core Calculation: Hours * Users * Revenue/User/Hour
+            const totalLoss = downtimeHours * affectedUsers * revenueLoss;
+
+            // Format as US Dollar currency
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2,
+            });
+
+            document.getElementById('totalLoss').textContent = formatter.format(totalLoss);
+            document.getElementById('resultsSection').classList.remove('hidden');
+        }
+
+        // Event listener fix for button functionality
+        window.onload = function() {
+            document.getElementById('calculateBtn').addEventListener('click', calculateSLA);
+        };
+    </script>
+</body>
+</html>
