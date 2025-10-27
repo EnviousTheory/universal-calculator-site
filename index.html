@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Tag Manager (GTM) - HEADER SNIPPET (MOVED TO TOP FOR TRACKING FIX) -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtag/js?id=G-YHNZY1K0SK'+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5WSPGJ6W');</script>
-
+    
+    <!-- FINAL TRACKING FIX: DIRECT GOOGLE TAG INSTALL -->
+    <!-- This replaces the complex GTM snippet entirely to guarantee tracking works. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHNZY1K0SK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YHNZY1K0SK');
+    </script>
+    
     <title>SLA Outage Cost Analyzer | UnverisalCalculator</title>
     <!-- Force HTTPS for security -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -71,9 +75,6 @@
 </head>
 
 <body class="min-h-screen flex flex-col items-center p-4 sm:p-8">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WSPGJ6W"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <!-- Navigation Bar -->
     <nav class="w-full max-w-4xl mx-auto flex justify-between items-center py-3 px-4 bg-white rounded-lg shadow-md mb-8">
