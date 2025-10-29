@@ -29,15 +29,12 @@
     }
     </script>
 
-    <!-- GOOGLE ANALYTICS (GA4) - SIMPLIFIED gtag.js RESTORED -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHNZY1K0SK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-YHNZY1K0SK');
-    </script>
+    <!-- GOOGLE ANALYTICS (GA4) / GTM - HEADER SNIPPET - CORRECTED -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtag/js?id=G-YHNZY1K0SK'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WSPGJ6W');</script>
     
     <!-- AdSense Verification/Loader Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3843044871711723"
@@ -74,6 +71,10 @@
 </head>
 
 <body class="min-h-screen flex flex-col items-center p-4 sm:p-8">
+    <!-- Google Tag Manager (noscript) - CORRECTED -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WSPGJ6W"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
     <!-- Navigation Bar -->
     <nav class="w-full max-w-4xl mx-auto flex justify-between items-center py-3 px-4 bg-white rounded-lg shadow-md mb-8">
         <a href="index.html" class="flex items-center space-x-2 text-indigo-600 font-extrabold text-xl hover:text-indigo-800 transition duration-150">
